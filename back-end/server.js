@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(bodyParser.json());
 // Set up CORS to allow requests from your frontend domain
-const allowedOrigins = ['https://endearing-meringue-128621.netlify.app/'];  // Replace with your frontend URL
+const allowedOrigins = ['https://spectacular-churros-469187.netlify.app/'];  // Replace with your frontend URL
 
 app.use(cors({
   origin: allowedOrigins,  // Allow only frontend URL
