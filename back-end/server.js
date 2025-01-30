@@ -6,7 +6,14 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
-app.use(cors());
+// Set up CORS to allow requests from your frontend domain
+const allowedOrigins = ['https://endearing-meringue-128621.netlify.app/'];  // Replace with your frontend URL
+
+app.use(cors({
+  origin: allowedOrigins,  // Allow only frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Define allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization']  // Define allowed headers
+}));
 
 // OTP Verification Endpoint
 app.post('/verify-otp', (req, res) => {
