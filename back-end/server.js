@@ -6,14 +6,8 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
-// Set up CORS to allow requests from your frontend domain
-const allowedOrigins = ['https://spectacular-churros-469187.netlify.app/'];  // Replace with your frontend URL
 
-app.use(cors({
-  origin: allowedOrigins,  // Allow only frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Define allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization']  // Define allowed headers
-}));
+app.use(cors());
 
 // OTP Verification Endpoint
 app.post('/verify-otp', (req, res) => {
