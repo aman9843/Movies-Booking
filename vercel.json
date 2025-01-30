@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/api/verify-otp",
+      "src": "verify-otp",
       "dest": "back-end/server.js"
     }
   ]
