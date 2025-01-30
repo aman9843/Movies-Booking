@@ -30,7 +30,7 @@ app.post('/verify-otp', (req, res) => {
   }
   if(otp.length !== 4){
     return res.status(400).json({message: 'OTP must be of 4 digit.'})
-  }gi
+  }
 
   
 
