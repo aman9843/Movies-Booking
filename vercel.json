@@ -9,7 +9,14 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/back-end/server.js"
+      "dest": "/back-end/server.js",
+      "methods":["GET","POST"],
+      "headers":{
+        "Access-Control-Allow-Origin":"*",
+        "Access-Control-Allow-Headers":"*",
+        "Access-Control-Allow-Credentials":"true",
+        "Access-Control-Allow-Methods":"*"
+      }
     }
   ]
 }
