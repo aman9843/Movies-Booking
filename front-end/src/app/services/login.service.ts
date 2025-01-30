@@ -13,7 +13,7 @@ import {ToastrService} from 'ngx-toastr'
 
 export class LoginService {
 
-    private apiUrl = 'http://localhost:3000/verify-otp'; 
+    private apiUrl = 'https://movie-seat-booking-c3mduek49-amans-projects-866d9b2b.vercel.app/verify-otp'; 
     private httpOptions: any;
 
     constructor(private http: HttpClient, private router: Router,private toastr: ToastrService) {
