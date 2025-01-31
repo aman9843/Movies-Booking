@@ -98,10 +98,12 @@ this.initializeSeats()
     this.userName = '';
     this.userEmail = '';
     this.formattedSeats = '';  // Reset formatted seats
+    localStorage.removeItem('otp');
+    this.router.navigate(['/login']);
   }
 
   logout(){
     localStorage.removeItem('otp');
-  this.router.navigate(['/login']);
+    this.router.navigate(['/login']);
   }
 }

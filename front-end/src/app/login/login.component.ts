@@ -57,9 +57,17 @@ export class LoginComponent implements OnInit {
    const otp = this.otpForm.get('otp')?.value;
       this.service.verifyOtp(otp).pipe(
         catchError(error => {
+          this.attempts++;
           console.log('err',error)
           // Handle any errors from the API call
           this.toastr.error(error);
+
+          if (this.attempts >= 3) {
+            this.loginForm?.get('mobile')?.setValue('');
+            this.otpForm?.get('otp')?.setValue('');
+            this.otpSent = false;
+            this.attempts = 0;
+          }
           return of(null);  // Return null to avoid breaking the flow
         })
       ).subscribe(response => {
